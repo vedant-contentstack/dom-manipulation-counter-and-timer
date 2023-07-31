@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Manipulation</title>
-    <link rel="stylesheet" href="./style/style.css">
-</head>
-<body>
-    <div id="root"></div>
-    <script src="./src/app.js"></script>
-</body>
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="./src/app.js" type="module"></script>
+  </head>
+  <body>
+    <div id="root">
+      <nav class="navbar is-primary">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/"> DOM Manipulation </a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <button class="button" id="counter-btn">Counter</button>
+              <button class="button" id="timer-btn">Timer</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section class="main">
+        <div
+          class="is-flex-direction-column is-flex-grow-1 is-justify-content-center is-align-items-center"
+          id="counter"
+        >
+          <div class="is-flex is-justify-content-center is-align-items-center">
+            <button id="decrement" class="button is-primary is-large mr-2">
+              -
+            </button>
+            <span id="count" class="is-size-3"></span>
+            <button id="increment" class="button is-primary is-large ml-2">
+              +
+            </button>
+          </div>
+          <button id="reset" class="button is-primary is-large">Reset</button>
+        </div>
+        <div
+          class="is-hidden is-flex is-flex-grow-1 is-justify-content-center is-align-items-center"
+          id="timer"
+        >
+          Timer
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
