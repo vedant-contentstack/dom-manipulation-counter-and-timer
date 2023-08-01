@@ -1,18 +1,25 @@
-import "./counter/counter.js";
-import "./timer/timer.js";
+import Tabs from "./components/Tabs.js";
+import Counter from "./components/counter/counter.js";
+import Timer from "./components/timer/timer.js";
 
-const counter = document.querySelector("#counter-btn");
-const timer = document.querySelector("#timer-btn");
+class App {
+  constructor() {
+    this.counter1 = new Counter();
+    this.counter2 = new Counter();
 
-counter.addEventListener("click", showCounter);
-timer.addEventListener("click", showTimer);
+    this.elements = [new Tabs(), this.counter1, this.counter2];
+  }
 
-function showCounter() {
-  document.querySelector("#counter").classList.remove("is-hidden");
-  document.querySelector("#timer").classList.add("is-hidden");
+  render(elements) {
+    elements.forEach((el) => el.mount(document.getElementById("root")));
+  }
+
+  mount() {
+    this.render(this.elements);
+  }
 }
 
-function showTimer() {
-  document.querySelector("#timer").classList.remove("is-hidden");
-  document.querySelector("#counter").classList.add("is-hidden");
-}
+const app = new App();
+app.mount();
+
+export default App;
