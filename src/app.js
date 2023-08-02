@@ -5,6 +5,7 @@ import Timer from "./components/timer/timer.js";
 class App {
   constructor() {
     this.counter1 = new Counter();
+    this.counter2 = new Counter();
     this.timer1 = new Timer();
 
     this.elements = [
