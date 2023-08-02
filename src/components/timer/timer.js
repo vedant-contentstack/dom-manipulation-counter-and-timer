@@ -49,9 +49,11 @@ class Timer extends Element {
   render() {
     this.element = document.createElement("div");
     this.element.classList.add(
+      "is-hidden",
       "is-flex",
       "is-justify-content-center",
-      "is-align-items-center"
+      "is-align-items-center",
+      "mt-2"
     );
     this.element.id = this.id;
 

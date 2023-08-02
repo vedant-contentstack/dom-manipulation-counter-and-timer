@@ -4,16 +4,30 @@ import Counter from "./counter/counter.js";
 import Timer from "./timer/timer.js";
 
 class Tabs extends Element {
-  constructor() {
+  constructor(counterId, timerId) {
     super("tabs");
     this.element = null;
     this.active = "counter";
     this.isUpdate = false;
+    this.counterId = counterId;
+    this.timerId = timerId;
+  }
+
+  toggleTabs() {
+    if (this.active === "counter") {
+      document.getElementById(this.counterId).classList.remove("is-hidden");
+      document.getElementById(this.timerId).classList.add("is-hidden");
+    }
+    if (this.active === "timer") {
+      document.getElementById(this.timerId).classList.remove("is-hidden");
+      document.getElementById(this.counterId).classList.add("is-hidden");
+    }
   }
 
   updateDOM(name) {
     this.isUpdate = true;
     this.active = name;
+    this.toggleTabs();
     this.mount(document.getElementById("root"));
   }
 
