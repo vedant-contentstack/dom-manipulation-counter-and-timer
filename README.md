@@ -1,4 +1,4 @@
-# dom-manipulation-counter-and-timer
+# DOM
 
 ![alt text](https://github.com/vedant-contentstack/dom-manipulation-counter-and-timer/blob/main/img.png?raw=true)
 
